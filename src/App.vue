@@ -42,7 +42,7 @@ const images: any = {
       </h2>
       <h3 class="text-center text-xl mt-6 text-white">
         <span class="font-bold text-2xl">
-          {{ nextHoliday?.date.replace(/\-/g, '/').split('/').reverse().join('/') }}
+          {{ nextHoliday?.date && nextHoliday?.date.replace(/\-/g, '/').split('/').reverse().join('/') }}
 
         </span>
       </h3>
