@@ -18,7 +18,8 @@ getHolidays().then((responseHolidays) => {
   })
 
 
-  nextHoliday.value = { ...nextHolidays[0], date: new Date(nextHolidays[0].date) }
+  nextHoliday.value = nextHolidays[0]
+
 
 })
 const images: { "Finados": string, "Nossa Senhora Aparecida": string } = {
@@ -29,19 +30,19 @@ const images: { "Finados": string, "Nossa Senhora Aparecida": string } = {
 </script>
 
 <template>
-  <main class="flex items-center justify-center h-screen bg-no-repeat bg-cover bg-center">
-  <div class="flex flex-col items-center justify-center">
-      <!-- :style="{ 'background': 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url(' + images['Nossa Senhora Aparecida'] + ')' }"> -->
+  <main class="flex items-center justify-center h-screen bg-no-repeat bg-cover bg-center"
+    :style="{ 'background': 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url(' + images['Nossa Senhora Aparecida'] + ')' }">
+    <div class="flex flex-col items-center justify-center">
       <h1 class="text-xg text-gray-200 font-normal mb-4">Qual o próximo feriado?</h1>
       <h2 class="text-4xl text-white">
         {{ nextHoliday?.name }}
       </h2>
       <h3 class="text-center text-xl mt-6 text-white">
         <span class="font-bold text-2xl">
-          {{ format(nextHoliday?.date, "dd-MM-yyyy").toString().replace(/\-/g, '/') }}
+          {{ format(new Date(nextHoliday?.date), "dd-MM-yyyy").toString().replace(/\-/g, '/') }}
         </span>
         <br>
-        {{ format(nextHoliday?.date, "eeee", { locale }) }}
+        {{ format(new Date(nextHoliday?.date), "eeee", { locale }) }}
       </h3>
     </div>
   </main>
