@@ -18,7 +18,7 @@ getHolidays().then((responseHolidays) => {
   })
 
 
-  nextHoliday.value = nextHolidays[2]
+  nextHoliday.value = nextHolidays[0]
   console.log(new Date(nextHoliday.value.date))
 
 })
