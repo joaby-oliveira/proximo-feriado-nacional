@@ -33,7 +33,8 @@ const images: any = {
 
 <template>
   <main class="flex items-center justify-center h-screen bg-no-repeat bg-cover bg-center"
-    :style="{ 'background': 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url(' + images[nextHoliday.name] + ')' }">
+    :style="{ 'background': 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url(' + images[nextHoliday.name] + ')' }"
+    v-if="nextHoliday">
     <div class="flex flex-col items-center justify-center">
       <h1 class="text-xg text-gray-200 font-normal mb-4">Qual o próximo feriado?</h1>
       <h2 class="text-4xl text-white">
